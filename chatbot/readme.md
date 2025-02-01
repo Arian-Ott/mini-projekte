@@ -2,12 +2,6 @@
 ## 📗 Beschreibung
 Dieses Repository beinhaltet das Material für das Praktikum in der Bechtle IT 2025.
 
-**Table of Content**
-- [📗 Beschreibung](#-was-erwartet-euch)
-- [🪚 Aufgaben](#-how-to-download) <br>
-  [➡️ Eure Aufgabe](#main-exercises) <br>
-  [➡️ Hustler Aufgabe](#für-die-schnellen)
-
 ## Was erwartet euch
 Zu Beginn dürft ihr euch zurücklehnen und etwas über uns und die Ausbildung bzw. dem dualen Studium in der Bechtle IT erfahren. Fragen dürft ihr uns natürlich jederzeit stellen 🙂
 
