@@ -1,4 +1,4 @@
-# Schülerpraktikum in der <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Logo_Bechtle.svg?uselang=de" width="22%" style="margin-left: 5px; margin-right: 5px"> <i>IT</i>
+# Schülerpraktikum in der <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Logo_Bechtle.svg?uselang=de" width="12%" style="margin-left: 5px; margin-right: 5px"> <i>IT</i>
 ## 📗 Beschreibung
 Dieses Repository beinhaltet das Material für das Praktikum in der Bechtle IT 2025.
 
