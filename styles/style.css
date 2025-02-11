@@ -1,27 +1,113 @@
 :root {
-  background-color: #EFEFEF;
-  color: #074f32;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: #FEFEFE;
 }
 
-.navbar {
+header {
   background-color: #FEFEFE;
+}
+header nav {
   box-shadow: 0 0 4rem rgba(0, 0, 0, 0.5);
   border-radius: 0.5rem;
   margin: 2rem;
   padding: 1rem;
+  background-color: #FEFEFE;
 }
-.navbar img {
-  max-width: 22%;
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vw;
+  background: transparent;
 }
-.box {
-  background-color: #303030;
-  color: #FEFEFE;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4rem;
-  max-width: 50rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+.chat-container {
+  width: 100rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  background: white;
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.chat-box {
+  padding: 20px;
+  height: 500px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-message {
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-size: 1.3rem;
+}
+.chat-message.bot {
+  background: #074f32;
+  color: white;
+  align-self: flex-start;
+}
+.chat-message.user {
+  background: #23a86a;
+  color: white;
+  align-self: flex-end;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  margin-left: 10px;
+  padding: 10px;
+  background: #074f32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+button:hover {
+  background: #032014;
+}
+
+#clear-btn {
+  background: #f00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 10px;
+  padding: 10px;
+}
+#clear-btn:hover {
+  background: #032014;
+}
+
+img {
+  max-width: 10%;
+  transition: 0.3s ease-in-out;
+}
+img:hover {
+  scale: 1.1;
 }/*# sourceMappingURL=style.css.map */
