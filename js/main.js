@@ -1,10 +1,9 @@
 const sendButton = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
-const secretKey = "";
-const localStorageKey = "chatMessageHistory";
 const clearButton = document.getElementById("clear-btn");
 
+const localStorageKey = "chat_history";
 let messageHistory = JSON.parse(localStorage.getItem(localStorageKey)) || [];
 
 function saveHistory() {
@@ -14,11 +13,11 @@ function saveHistory() {
 clearButton.addEventListener("click", () => {
   messageHistory = [];
   localStorage.removeItem(localStorageKey);
-
   document.location.reload();
 });
 
 function loadChatHistory() {
+  document.getElementById("user-input").focus();
   messageHistory.forEach((msg) => {
     if (msg.role === "user") {
       appendMessage("user", msg.content);
@@ -27,39 +26,45 @@ function loadChatHistory() {
     }
   });
 }
+
 var blocker = false;
 async function chatting() {
-   
   const userMessage = userInput.value.trim();
   if (!userMessage) return;
 
   appendMessage("user", userMessage);
 
+  // Add the new message to history
   messageHistory.push({ role: "user", content: userMessage });
+
+
+  const formattedHistory = messageHistory.map((msg) => `${msg.role}: ${msg.content}`).join("\n");
+
   saveHistory();
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const response = await fetch("http://localhost:8000/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${secretKey}`,
       },
       body: JSON.stringify({
-        model: "gpt-4o",
-        temperature: 0,
-        messages: messageHistory,
+        user_input: formattedHistory,  
+        system_prompt: "Antworte nur auf Schwäbisch",
+        temperature: 0.7,
+        model_name: "gpt-3.5-turbo",
       }),
     });
-    
+
     const data = await response.json();
-    
+
     if (!response.ok) {
       throw new Error(data.error?.message || "Failed to fetch response.");
     }
 
-    const botReply = data.choices[0].message.content;
+    const botReply = data.response;
 
+    // Add bot response to history
     messageHistory.push({ role: "assistant", content: botReply });
     saveHistory();
 
@@ -68,8 +73,9 @@ async function chatting() {
     console.error("Error:", error);
     appendMessage("bot", "Error occurred while fetching response.");
   }
+  
   blocker = true;
-    userInput.active = true;
+  userInput.active = true;
 }
 
 // Event Listeners for sending messages

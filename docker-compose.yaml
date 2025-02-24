@@ -1,0 +1,15 @@
+services:
+  api:
+    build: api
+    target: runtime
+    platforms:
+      - linux/amd64
+      - linux/arm64
+    image: arian-ott/chat-api:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - ".env"
+    restart: unless-stopped
+
+    

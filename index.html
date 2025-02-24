@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot Interface</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="js/main.js" defer ></script>
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="https://bechtle.com" target="_blank">
-            <img src="assets/Logo_Bechtle.svg">
-        </a>
-        </nav>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chatbot Interface</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="js/main.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="https://bechtle.com" target="_blank">
+                    <img src="assets/Logo_Bechtle.svg" alt="Bechtle Logo">
+                </a>
+                <h1>Your title here</h1>
+            </nav>
+        </header>
+        <main>
+            <div class="chat-container">
 
+                <div class="chat-box" id="chat-box">
+                    <div class="chat-message bot">Moin!</div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-input"
+                        placeholder="Type a message...">
+                    <button id="send-btn">Send</button>
+                    <button id="clear-btn"><img src="assets/rubbish_bin.svg"
+                            alt="Rubbish Bin delete icon" /></button>
+                </div>
+            </div>
+        </main>
 
-    </header>
-<main>
-    <div class="chat-container">
-      
-        <div class="chat-box" id="chat-box">
-            <div class="chat-message bot">Moin!</div>
-        </div>
-        <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Type a message...">
-            <button id="send-btn">Send</button>
-            <button id="clear-btn">Clear</button>
-        </div>
-    </div>
-</main>
-    
-
-</body>
+    </body>
 
 </html>
