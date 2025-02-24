@@ -1,6 +1,6 @@
-
+**/__pycache__
 node_modules
 *.json
-api
-api/*
+
 *.env
+.DS_Store
